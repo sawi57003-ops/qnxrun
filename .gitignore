@@ -1,0 +1,4 @@
+qnx-image*/
+__pycache__/
+*.log
+output/
