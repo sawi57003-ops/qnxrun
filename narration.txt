@@ -1,0 +1,23 @@
+# Narration — qnxrun (target ~60 s)
+#
+# Read at a calm, steady pace. The video shows a terminal: qnxrun
+# doctor, qnxrun build, qnxrun run, and the QNX serial console booting
+# a hello-world binary.
+
+Building a bootable QNX image and running it in QEMU should be one
+command. With the stock tools, it is not.
+
+The run script demands bridge networking setup before it will even
+start QEMU. The license file lives in two different home directories,
+depending on which tool wrote it. And adding your own binary to the
+image means hand-writing snippet files.
+
+qnxrun fixes all three. Doctor checks your SDK, compiler, QEMU and
+license. Build puts your binary in the image and starts it at boot.
+Run boots QEMU headless and streams the serial console to your
+terminal — no bridge, no network setup.
+
+Here it is end to end: check, build, run. Hello from QNX 8.0.
+
+One command from source to a booting QNX system. Source code is on
+GitHub, linked below.
